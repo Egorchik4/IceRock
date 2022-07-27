@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_conection_error"/>
+    <item android:drawable="@drawable/ic_vector_internet_first"
+        android:gravity="center"
+        android:top="64dp"/>
+    <item android:drawable="@drawable/ic_vector_internet_second"
+        android:gravity="center"
+        android:top="44dp"/>
+    <item android:drawable="@drawable/ic_vector_internet_third"
+        android:gravity="center"
+        android:top="34dp"/>
+    <item android:drawable="@drawable/ic_vector_internet_fourth"
+        android:gravity="center"
+        android:top="26dp" />
+</layer-list>

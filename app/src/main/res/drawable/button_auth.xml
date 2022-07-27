@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:width="328dp"
+android:height="35dp"
+android:viewportWidth="328"
+android:viewportHeight="35">
+<group>
+    <clip-path
+        android:pathData="M8 0H320C324.418 0 328 3.58172 328 8V27C328 31.4183 324.418 35 320 35H8C3.58172 35 0 31.4183 0 27V8C0 3.58172 3.58172 0 8 0Z"
+        />
+    <path
+        android:pathData="M0 0V35H328V0"
+        android:fillColor="@color/button_auth"
+        />
+</group>
+</vector>
