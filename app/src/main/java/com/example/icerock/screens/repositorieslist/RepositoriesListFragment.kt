@@ -75,6 +75,7 @@ class RepositoriesListFragment : Fragment(), RepositoriesListRecyclerAdapter.Lis
     private fun loadingState(){
         binding.progressBarList.visibility = View.VISIBLE
         binding.CardViewRefresh.visibility = View.GONE
+
     }
 
     private fun invalidInputState(errorType: String){
