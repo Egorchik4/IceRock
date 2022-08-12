@@ -2,8 +2,6 @@ package com.example.icerock.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.OnBackPressedCallback
 import com.example.icerock.R
 import dagger.hilt.android.AndroidEntryPoint
 

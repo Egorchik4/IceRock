@@ -1,7 +1,5 @@
 package com.example.icerock.repository
 
-import android.content.Context
-import android.util.Log
 import com.example.icerock.constants.Constants
 import com.example.icerock.usecases.GetInSharedPreference
 import com.example.icerock.usecases.PutInSharedPreference
@@ -21,11 +19,11 @@ class KeyValueStorage @Inject constructor(
     }
 
     fun putValueInSharedPref(key: String, value: String){
-        prefPutInStorage.putinshared(key, value)
+        prefPutInStorage.putInSharedPref(key, value)
     }
 
     private fun getAuthToken(){
-        authToken = prefGetInStorage.getinshared(Constants.KEY_TOKEN)
-        userName = prefGetInStorage.getinshared(Constants.NAME)
+        authToken = prefGetInStorage.getInSharedPref(Constants.KEY_TOKEN)
+        userName = prefGetInStorage.getInSharedPref(Constants.NAME)
     }
 }

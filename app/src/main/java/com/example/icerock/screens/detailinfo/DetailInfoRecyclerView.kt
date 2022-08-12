@@ -2,7 +2,6 @@ package com.example.icerock.screens.detailinfo
 
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,10 +45,7 @@ class DetailInfoRecyclerView : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     i.data = Uri.parse(url)
                     startActivity(binding.textViewURL.context,i,null)
                 }
-
-
             }
-
         }
     }
 
@@ -73,6 +69,7 @@ class DetailInfoRecyclerView : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 bindingg.ViewReadMe.visibility = View.VISIBLE
                 bindingg.ConnectionErrorLayout.visibility = View.GONE
                 renderMarkdown(bindingg.ViewReadMe,state)
+
             }else if(state is DetailInfoViewModel.ReadmeState.Error){
                 if(state.error == Constants.CONNECTION_ERROR) {
                     bindingg.ViewReadMe.visibility = View.GONE

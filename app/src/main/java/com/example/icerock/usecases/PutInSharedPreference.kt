@@ -5,8 +5,7 @@ import android.content.SharedPreferences
 import javax.inject.Inject
 
 class PutInSharedPreference @Inject constructor(var prefput: SharedPreferences) {
-    fun putinshared(key: String,value: String){
-        // запись в sharedpreference
+    fun putInSharedPref(key: String, value: String){
         prefput
             .edit()
             .putString(key,value)
