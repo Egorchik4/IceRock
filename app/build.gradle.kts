@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.example.icerock"
         minSdkVersion(21)
-        targetSdkVersion(33)
+        targetSdkVersion(21)
         versionCode = 1
         versionName = "1.0"
 
