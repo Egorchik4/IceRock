@@ -23,13 +23,13 @@ class RepositoriesListRecyclerAdapter(private val listener: Listener): RecyclerV
         fun bind(repo: Repo)
         {
             if(repo.language == Constants.KOTLIN){
-                binding.textViewLanguage.setTextColor(binding.textViewLanguage.context.getColor(R.color.kotlin_text))
+                binding.textViewLanguage.setTextColor(binding.textViewLanguage.resources.getColor(R.color.kotlin_text))
             }else if(repo.language == Constants.JAVA_SCRIPT){
-                binding.textViewLanguage.setTextColor(binding.textViewLanguage.context.getColor(R.color.javascript_text))
+                binding.textViewLanguage.setTextColor(binding.textViewLanguage.resources.getColor(R.color.javascript_text))
             }else if(repo.language == Constants.JAVA){
-                binding.textViewLanguage.setTextColor(binding.textViewLanguage.context.getColor(R.color.java_text))
+                binding.textViewLanguage.setTextColor(binding.textViewLanguage.resources.getColor(R.color.java_text))
             }else{
-                binding.textViewLanguage.setTextColor(binding.textViewLanguage.context.getColor(R.color.white))
+                binding.textViewLanguage.setTextColor(binding.textViewLanguage.resources.getColor(R.color.white))
             }
             binding.textViewLanguage.text = repo.language
             binding.textViewName.text = repo.name
