@@ -2,6 +2,7 @@ package com.example.icerock.screens.auth
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,28 +28,23 @@ class AuthFragment : Fragment() {
     private val viewModelAuth: AuthViewModel by viewModels()
     @Inject lateinit var showAlertDialog: ShowAlertDialog
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val token: String? = viewModelAuth.token.value
-        if(token != null){
-            findNavController().navigate(R.id.action_authFragment_to_repositoriesListFragment)
-        }
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = AuthFragmentBinding.inflate(inflater)
         MainActivity.exitFromApplication = false
+        val token: String? = viewModelAuth.token.value
+        if(token != null){
+            findNavController().navigate(R.id.action_authFragment_to_repositoriesListFragment)
+            viewModelAuth.clearToken()
+        }
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         viewModelAuth.state.observe(viewLifecycleOwner){
             if (viewModelAuth.state.value != null){
                 if(viewModelAuth.state.value is AuthViewModel.State.Idle) {
                     idleState()
-                    findNavController().navigate(R.id.action_authFragment_to_repositoriesListFragment)  // .navigate(action,bundle,anim)
+                    findNavController().navigate(R.id.action_authFragment_to_repositoriesListFragment)
                     viewModelAuth.clearLive() // очистить LiveData для возврата на этот экран
                 }else if(viewModelAuth.state.value is AuthViewModel.State.Loading) {
                     loadingState()
