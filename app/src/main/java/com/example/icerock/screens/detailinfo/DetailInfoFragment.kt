@@ -30,8 +30,13 @@ class DetailInfoFragment : Fragment() {
 
         parentFragmentManager.setFragmentResultListener(Constants.NAME,viewLifecycleOwner){_, data ->
             val name: String? = data.getString(Constants.NAME_OF_REPO)
-            viewModelDetailInfo.saveName(name)
-            binding.textViewNameRepo.text = viewModelDetailInfo.nameDeatail
+            if(name != null){
+                viewModelDetailInfo.saveName(name)
+            }
+        }
+
+        viewModelDetailInfo.name.observe(viewLifecycleOwner){
+            binding.textViewNameRepo.text = viewModelDetailInfo.name.value
         }
 
         binding.imageViewBack.setOnClickListener {

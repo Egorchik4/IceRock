@@ -100,5 +100,11 @@ class AuthViewModel @Inject constructor(
 
     fun clearLive(){
         stateMutLive.value = null
+        clearToken()
+
+    }
+
+    fun clearToken(){
+        tokenMutLive.value = null
     }
 }

@@ -28,10 +28,12 @@ class DetailInfoViewModel @Inject constructor(
     private var readmeMutLive = MutableLiveData<ReadmeState>()
     val readme: LiveData<ReadmeState> = readmeMutLive
 
-    var nameDeatail: String = ""
+    private var nameMutLive = MutableLiveData<String>()
+    val name: LiveData<String> = nameMutLive
 
-    fun saveName(name: String?){
-        nameDeatail = name!!
+    fun saveName(name: String){
+        nameMutLive.value = name
+
     }
 
     init {
@@ -44,9 +46,8 @@ class DetailInfoViewModel @Inject constructor(
             try {
                 val response: List<Repo> = getListRepoByGitHub.getRepoList(keyValueStorage.authToken)
                 response.forEach {
-                    // находим по id нужный нам репозиторий(data class)
-                    if(it.name == nameDeatail){
-                        stateMutLive.value = State.Loaded(it,ReadmeState.Loading) //второй аргумент(начало загрузки readme файла)
+                    if(it.name == nameMutLive.value){
+                        stateMutLive.value = State.Loaded(it,ReadmeState.Loading)
                     }
                 }
             } catch (e: HttpException) {
@@ -73,7 +74,7 @@ class DetailInfoViewModel @Inject constructor(
         readmeMutLive.value = ReadmeState.Loading
         viewModelScope.launch {
             try{
-                val responseReadMe: ReadME = getRepositoryReadme.getRepositoryReadme(keyValueStorage.userName ?: "", nameDeatail,"master")
+                val responseReadMe: ReadME = getRepositoryReadme.getRepositoryReadme(keyValueStorage.userName ?: "", nameMutLive.value!!,"master")
                 readmeMutLive.value = ReadmeState.Loaded(responseReadMe.download_url!!)
             } catch (e: HttpException) {
                 if(e.code() == 404){
