@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.icerock.constants.Constants
 import com.example.icerock.repository.*
+import com.example.icerock.repository.retrofit.ReadME
+import com.example.icerock.repository.retrofit.Repo
 import com.example.icerock.usecases.CheckInternetConnection
 import com.example.icerock.usecases.GetListRepoByGitHub
 import com.example.icerock.usecases.GetRepositoryReadme
@@ -33,7 +35,6 @@ class DetailInfoViewModel @Inject constructor(
 
     fun saveName(name: String){
         nameMutLive.value = name
-
     }
 
     init {

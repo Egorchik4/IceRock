@@ -1,4 +1,4 @@
-package com.example.icerock.repository
+package com.example.icerock.repository.retrofit
 
 import kotlinx.serialization.Serializable
 

@@ -1,6 +1,6 @@
 package com.example.icerock.usecases
 
-import com.example.icerock.repository.UserInfo
+import com.example.icerock.repository.retrofit.UserInfo
 import com.example.icerock.repository.retrofit.AppRepository
 import javax.inject.Inject
 

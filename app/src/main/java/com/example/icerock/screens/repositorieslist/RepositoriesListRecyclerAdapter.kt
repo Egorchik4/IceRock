@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.icerock.R
 import com.example.icerock.constants.Constants
 import com.example.icerock.databinding.RecyclerItemBinding
-import com.example.icerock.repository.Repo
+import com.example.icerock.repository.retrofit.Repo
 
 class RepositoriesListRecyclerAdapter(private val listener: Listener): RecyclerView.Adapter<RepositoriesListRecyclerAdapter.RepoHolder>() {
 

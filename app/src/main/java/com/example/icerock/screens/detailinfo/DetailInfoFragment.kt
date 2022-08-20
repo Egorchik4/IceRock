@@ -85,12 +85,11 @@ class DetailInfoFragment : Fragment() {
     }
 
     private fun idleState(){
+        viewModelDetailInfo.getReadme()
         binding.recycler.visibility = View.VISIBLE
         binding.progressBarDetail.visibility = View.GONE
         binding.ConnectionErrorLayout.visibility = View.GONE
         binding.CardViewRefreshDetail.visibility = View.GONE
-
-        viewModelDetailInfo.getReadme()
     }
     private fun loadingState(){
         binding.progressBarDetail.visibility = View.VISIBLE

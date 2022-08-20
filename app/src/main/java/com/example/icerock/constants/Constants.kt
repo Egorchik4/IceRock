@@ -5,7 +5,7 @@ class Constants{
         const val INITIAL_PART_TOKEN = "token "
         const val GITHUB = "https://api.github.com/"
         const val APP_PREFERENCES = "APP_PREFERENCES"
-        const val KEY_TOKEN = "KEY_TOKEN"  // ключ
+        const val KEY_TOKEN = "KEY_TOKEN"
         const val NAME = "NAME"
         const val NAME_OF_REPO = "NAME_of_Repo"
         const val CONNECTION_ERROR = "ConnectionError"
