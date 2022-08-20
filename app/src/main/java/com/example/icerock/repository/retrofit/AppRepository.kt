@@ -1,8 +1,5 @@
 package com.example.icerock.repository.retrofit
 
-import com.example.icerock.repository.ReadME
-import com.example.icerock.repository.Repo
-import com.example.icerock.repository.UserInfo
 import retrofit2.http.*
 
 interface AppRepository {

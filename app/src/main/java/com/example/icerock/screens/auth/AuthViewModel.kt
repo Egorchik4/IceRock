@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.icerock.constants.Constants
 import com.example.icerock.repository.KeyValueStorage
-import com.example.icerock.repository.UserInfo
+import com.example.icerock.repository.retrofit.UserInfo
 import com.example.icerock.usecases.AuthorizationByGitHubToken
 import com.example.icerock.usecases.CheckInternetConnection
 import dagger.hilt.android.lifecycle.HiltViewModel

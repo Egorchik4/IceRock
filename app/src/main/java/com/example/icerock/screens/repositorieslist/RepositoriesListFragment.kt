@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,9 +12,8 @@ import com.example.icerock.R
 import com.example.icerock.activity.MainActivity
 import com.example.icerock.constants.*
 import com.example.icerock.databinding.RepositoriesListFragmentBinding
-import com.example.icerock.repository.Repo
+import com.example.icerock.repository.retrofit.Repo
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class RepositoriesListFragment : Fragment(), RepositoriesListRecyclerAdapter.Listener{
@@ -69,16 +67,25 @@ class RepositoriesListFragment : Fragment(), RepositoriesListRecyclerAdapter.Lis
     }
 
     private fun idleState(){
+        binding.rcView.visibility = View.VISIBLE
         binding.progressBarList.visibility = View.GONE
         binding.CardViewRefresh.visibility = View.GONE
+        binding.SomethingErrorLayout.visibility = View.GONE
+        binding.ConnectionErrorLayout.visibility = View.GONE
+        binding.EmptyLayout.visibility = View.GONE
     }
     private fun loadingState(){
+        binding.rcView.visibility = View.GONE
         binding.progressBarList.visibility = View.VISIBLE
         binding.CardViewRefresh.visibility = View.GONE
+        binding.SomethingErrorLayout.visibility = View.GONE
+        binding.ConnectionErrorLayout.visibility = View.GONE
+        binding.EmptyLayout.visibility = View.GONE
 
     }
 
     private fun invalidInputState(errorType: String){
+        binding.rcView.visibility = View.GONE
         binding.progressBarList.visibility = View.GONE
         binding.CardViewRefresh.visibility = View.VISIBLE
         binding.textViewRefresh.text = Constants.RETRY
@@ -93,14 +100,15 @@ class RepositoriesListFragment : Fragment(), RepositoriesListRecyclerAdapter.Lis
     }
 
     private fun emptyState(){
+        binding.rcView.visibility = View.GONE
         binding.progressBarList.visibility = View.GONE
         binding.EmptyLayout.visibility = View.VISIBLE
+        binding.SomethingErrorLayout.visibility = View.GONE
+        binding.ConnectionErrorLayout.visibility = View.GONE
 
         binding.CardViewRefresh.visibility = View.VISIBLE
         binding.textViewRefresh.text = Constants.REFRESH
 
-        binding.SomethingErrorLayout.visibility = View.GONE
-        binding.ConnectionErrorLayout.visibility = View.GONE
     }
 
 }

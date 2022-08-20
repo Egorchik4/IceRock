@@ -1,6 +1,5 @@
 package com.example.icerock.usecases
 
-import android.content.Context
 import android.content.SharedPreferences
 import javax.inject.Inject
 

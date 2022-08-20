@@ -104,6 +104,6 @@ class AuthFragment : Fragment() {
 
         binding.textViewHelper.visibility = View.VISIBLE
         binding.textViewFloat.setTextColor(resources.getColor(R.color.text_red))
-        binding.textViewInput.backgroundTintList = resources.getColorStateList(R.color.text_red)
+        binding.textViewInput.backgroundTintList = resources.   getColorStateList(R.color.text_red)
     }
 }

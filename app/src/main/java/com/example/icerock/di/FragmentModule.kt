@@ -42,18 +42,18 @@ class FragmentModule {
     }
 
     @Provides
-    fun provideAuthorizationByGitHubToken(app: AppRepository): AuthorizationByGitHubToken{
-        return AuthorizationByGitHubToken(app)
+    fun provideAuthorizationByGitHubToken(appRepo: AppRepository): AuthorizationByGitHubToken{
+        return AuthorizationByGitHubToken(appRepo)
     }
 
     @Provides
-    fun provideGetListRepoByGitHub(app: AppRepository): GetListRepoByGitHub{
-        return GetListRepoByGitHub(app)
+    fun provideGetListRepoByGitHub(appRepo: AppRepository): GetListRepoByGitHub{
+        return GetListRepoByGitHub(appRepo)
     }
 
     @Provides
-    fun provideGetRepositoryReadme(app: AppRepository): GetRepositoryReadme{
-        return GetRepositoryReadme(app)
+    fun provideGetRepositoryReadme(appRepo: AppRepository): GetRepositoryReadme{
+        return GetRepositoryReadme(appRepo)
     }
 
 }

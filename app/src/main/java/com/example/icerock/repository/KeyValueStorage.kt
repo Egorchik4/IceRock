@@ -5,7 +5,6 @@ import com.example.icerock.usecases.GetInSharedPreference
 import com.example.icerock.usecases.PutInSharedPreference
 import javax.inject.Inject
 
-
 class KeyValueStorage @Inject constructor(
     var prefPutInStorage: PutInSharedPreference,
     var prefGetInStorage: GetInSharedPreference
